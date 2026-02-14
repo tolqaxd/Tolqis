@@ -9,6 +9,12 @@ if success and (executor:find("xeno") or executor:find("solara")) then
 })
 end
 
+StarterGui:SetCore("SendNotification", {
+    Title = "Important!",
+    Text = "Best Brainrot ESP and Auto Interaction is not working right now.",
+    Duration = 10
+})
+
 local p = game.PlaceId
 local s = {
     {n = "etfb", pid = 131623223084840, sc = "https://raw.githubusercontent.com/tolqaxd/Tolqis/refs/heads/main/ETFB.lua"},
