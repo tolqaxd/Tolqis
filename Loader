@@ -1,0 +1,28 @@
+local p = game.PlaceId
+local s = {
+    {n = "etfb", pid = 131623223084840, sc = "https://raw.githubusercontent.com/tolqaxd/Tolqis/refs/heads/main/ETFB.lua"},
+ }
+
+local function f(id)
+    for _, g in ipairs(s) do
+        if id == g.pid then return g end
+    end
+end
+
+local m = f(p)
+
+if not m then
+    pcall(function()
+        local pg = game:GetService("AssetService"):GetGamePlacesAsync()
+        while not m do
+            for _, pl in pairs(pg:GetCurrentPage()) do
+                m = f(pl.PlaceId)
+                if m then break end
+            end
+            if pg.IsFinished then break end
+            pg:AdvanceToNextPageAsync()
+        end
+    end)
+end
+
+if m then loadstring(game:HttpGet(m.sc))() else warn("tolqis hub is not supported on this game.") end
