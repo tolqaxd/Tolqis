@@ -1,20 +1,3 @@
-local StarterGui = game:GetService("StarterGui")
-local success, executor = pcall(identifyexecutor)
-executor = tostring(executor):lower()
-if success and (executor:find("xeno") or executor:find("solara")) then
-    StarterGui:SetCore("SendNotification", {
-    Title = "Unsupported Executor",
-    Text = "You are using xeno which is unsupported.",
-    Duration = 10
-})
-end
-
-StarterGui:SetCore("SendNotification", {
-    Title = "Important!",
-    Text = "Best Brainrot ESP and Auto Interaction is not working right now.",
-    Duration = 10
-})
-
 local p = game.PlaceId
 local s = {
     {n = "etfb", pid = 131623223084840, sc = "https://raw.githubusercontent.com/tolqaxd/Tolqis/refs/heads/main/ETFB.lua"},
